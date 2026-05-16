@@ -26,6 +26,6 @@ class TestUserPassword:
         assert UserProfile.valid_password("nevermore!") == False
         assert UserProfile.valid_password("0987654321") == False
         assert UserProfile.valid_password("WHATDOYOUWANT?") == False
-
-  if __name__ == "__main__":
+        
+if __name__ == "__main__":
     pytest.main([__file__, "-v"])
