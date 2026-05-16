@@ -20,7 +20,3 @@ class TestUserProfile:
       assert UserProfile.get_age("5/28/2000") == 25
       assert UserProfile.get_age("6/28/2000") == 25
       assert UserProfile.get_age("7/28/2000") == 25
-
-
-if __name__ == "__main__":
-    pytest.main([__file__, "-v"])
