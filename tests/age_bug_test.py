@@ -14,9 +14,9 @@ get_age() function should return these numbers correctly, and be able to tell wh
 class TestUserProfile:
     # Some of these should return the wrong age
     def test_correct_age(self):
-      assert UserProfile.get_age("2/28/2000") == 26
-      assert UserProfile.get_age("3/28/2000") == 26
-      assert UserProfile.get_age("4/28/2000") == 26
-      assert UserProfile.get_age("5/28/2000") == 25
-      assert UserProfile.get_age("6/28/2000") == 25
-      assert UserProfile.get_age("7/28/2000") == 25
+      assert UserProfile.get_age(2000, 2, 28) == 26
+      assert UserProfile.get_age(2000, 3, 28) == 26
+      assert UserProfile.get_age(2000, 4, 28) == 26
+      assert UserProfile.get_age(2000, 5, 28) == 25
+      assert UserProfile.get_age(2000, 6, 28) == 25
+      assert UserProfile.get_age(2000, 7, 28) == 25
