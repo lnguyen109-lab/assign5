@@ -33,4 +33,3 @@ class TestUserProfile:
         assert User.get_age(datetime(2025, 4, 30)) == 25
         assert User.get_age(datetime(2025, 6, 28)) == 25
 
-
