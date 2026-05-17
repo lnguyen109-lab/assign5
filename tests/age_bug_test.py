@@ -3,6 +3,7 @@ import json
 import sys
 from pathlib import Path
 from datetime import datetime
+from .location import Location
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
@@ -16,26 +17,20 @@ class TestUserProfile:
     # Some of these should return the wrong age
     def test_correct_age(self):
 
-        reference_date = datetime(2000, 2, 28)
-        assert UserProfile.get_age(reference_date) == 26
+        User = UserProfile(
+            name = "Test Name",
+            email = "testname@something.com",
+            password = "ThisisATest!",
+            dob = "2000-04-28",
+            location = Location(
+                city = "Los Angeles",
+                state = "CA",
+                country = "USA"
+            )
+        )
 
-        reference_date = datetime(2000, 3, 28)
-        assert UserProfile.get_age(reference_date) == 26
-        
-        reference_date = datetime(2000, 4, 28)
-        assert UserProfile.get_age(reference_date) == 26
-        
-        reference_date = datetime(2000, 5, 28)
-        assert UserProfile.get_age(reference_date) == 25
-        
-        reference_date = datetime(2000, 6, 28)
-        assert UserProfile.get_age(reference_date) == 25
-
-        reference_date = datetime(2000, 7, 28)
-        assert UserProfile.get_age(reference_date) == 25
-
-
-
-
-
-
+        assert User.get_age(datetime(2025, 2, 28)) == 24
+        assert User.get_age(datetime(2025, 3, 28)) == 24
+        assert User.get_age(datetime(2025, 4, 28)) == 25
+        assert User.get_age(datetime(2025, 5, 28)) == 25
+        assert User.get_age(datetime(2025, 6, 28)) == 25
