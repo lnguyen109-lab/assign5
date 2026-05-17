@@ -22,15 +22,13 @@ class TestUserProfile:
             email = "testname@something.com",
             password = "ThisisATest!",
             dob = "2000-04-28",
-            location = Location(
-                city = "Los Angeles",
-                state = "CA",
-                country = "USA"
-            )
+            location = Location("Los Angeles", "CA", "USA")
         )
 
         assert User.get_age(datetime(2025, 2, 28)) == 24
-        assert User.get_age(datetime(2025, 3, 28)) == 24
+        assert User.get_age(datetime(2025, 4, 26)) == 24
         assert User.get_age(datetime(2025, 4, 28)) == 25
-        assert User.get_age(datetime(2025, 5, 28)) == 25
+        assert User.get_age(datetime(2025, 4, 30)) == 25
         assert User.get_age(datetime(2025, 6, 28)) == 25
+
+
