@@ -22,7 +22,7 @@ class TestUserProfile:
         User = UserProfile(
             name = "Test Name",
             email = "testname@something.com",
-            password = "ThisisATest!",
+            password = "ThisisATest123!",
             dob = "2000-04-28",
             location = Location("Los Angeles", "CA", "USA")
         )
