@@ -24,7 +24,11 @@ class TestUserProfile:
             email = "testname@something.com",
             password = "ThisisATest123!",
             dob = "2000-04-28",
-            location = Location("Los Angeles", "CA", "USA")
+            location = Location(
+                city = "Los Angeles",
+                state = "CA",
+                country = "USA"
+            )
         )
 
         assert User.get_age(datetime(2025, 2, 28)) == 24
