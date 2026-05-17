@@ -1,15 +1,13 @@
-from __future__ import annotations
-
 import pytest
 import json
 import sys
 from pathlib import Path
 from datetime import datetime
-from .location import Location
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from src import UserProfile
+from src.location import Location
 
 '''
 get_age() function should return these numbers correctly, and be able to tell when someone's birthday has passed this year
